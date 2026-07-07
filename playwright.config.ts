@@ -21,24 +21,22 @@ export default defineConfig({
 
   projects: [
     {
-      // Login once and save session
       name: 'setup',
       testMatch: '**/auth.setup.ts',
     },
     {
-      // Main test suite
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        headless: true,
         storageState: 'playwright/.auth/user.json',
       },
-      dependencies: ['setup'],
     },
     {
-      // Development project (no setup dependency)
       name: 'dev',
       use: {
         ...devices['Desktop Chrome'],
+        headless: true,
       },
     },
   ],

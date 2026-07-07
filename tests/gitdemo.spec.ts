@@ -3,14 +3,12 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-// CONFIG
 
 test.describe.configure({ mode: 'serial' });
 
 const validUsername = process.env.TEST_USERNAME ?? 'demodev';
 const validPassword = process.env.TEST_PASSWORD ?? 'uhi*d6ue';
 
-// HELPERS
 
 async function waitForPortalLoader(page: Page): Promise<void> {
   await page.waitForLoadState('domcontentloaded');
@@ -72,10 +70,6 @@ async function expectLoginFailed(page: Page): Promise<void> {
 
   console.log('Login failed as expected');
 }
-
-// ---------------------------------------------------------------------
-// AUTHENTICATION TESTS
-// ---------------------------------------------------------------------
 
 test.describe('Authentication', () => {
 

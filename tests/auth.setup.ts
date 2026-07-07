@@ -15,7 +15,6 @@ const TARGET_TO   = 'DXB';
 
 const DEPARTURE_DATE = '2026-08-23';
 
-// HELPERS
 
 async function waitForPortalLoader(page: Page): Promise<void> {
   await page.waitForLoadState('domcontentloaded');
